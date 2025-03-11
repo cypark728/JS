@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>할일 삭제 기능은 아직 구현하지 마세요</h3>
+    <h3>input은 지우는게 아닐 display를 제어하세요</h3>
+    <h3>할일 목록 만들기</h3>
+    <h2 id="userHello"></h2>
+    <input type="text" placeholder="당신의 이름을 입력하세요" class="user">
+    <button type="button" id="userCheck">확인</button><br>
+    <input type="text" placeholder="당신의 할일을 입력하세요" class="toDo">
+    <button type="button" id="toDoCheck">확인</button>
+    <ul class="box">
+
+    </ul>
+
+    <script>
+        var user = document.querySelector(".user");
+        var toDo = document.querySelector(".toDo");
+        var userCheck = document.getElementById("userCheck");
+        var toDoCheck = document.getElementById("toDoCheck");
+        var box = document.querySelector(".box");
+        var userHello = document.getElementById("userHello");
+
+        userCheck.onclick = function() {
+            userHello.innerHTML = user.value + "님 안녕하세요";
+            user.style.display = "none";
+            userCheck.style.display = "none";
+            user.value = "";
+        }
+
+        toDoCheck.onclick = function() {
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+            a.href = "#";
+            a.innerHTML = toDo.value;
+            li.append(a);
+            var delBtn = document.createElement("button");
+            delBtn.type = "button";
+            delBtn.innerHTML = "X";
+            li.append(a);
+            li.append(delBtn);
+            box.appendChild(li);
+            toDo.value = "";
+
+        }
+
+    </script>
+
+</body>
+</html>
