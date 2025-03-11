@@ -31,7 +31,7 @@
             userHello.innerHTML = user.value + "님 안녕하세요";
             user.style.display = "none";
             userCheck.style.display = "none";
-            user.value = "";
+            user.value = ""; //공백으로로
         }
 
         toDoCheck.onclick = function() {
@@ -46,7 +46,7 @@
             li.append(a);
             li.append(delBtn);
             box.appendChild(li);
-            toDo.value = "";
+            toDo.value = ""; //공백으로
 
         }
 
