@@ -28,7 +28,7 @@
 			</tr>
         </thead>
         <tbody class="todoList">
-            <tr id="content">
+            <tr>
                 <td><input type="text" size="3"></td>
                 <td><input type="text"></td>
                 <td><input type="text" size="5"></td>
@@ -42,19 +42,24 @@
         var addLists = document.getElementById("addLists");
         var addList = document.getElementById("addList");
         var todoList = document.querySelector(".todoList");
-        var content = document.getElementById("content");
 
         addList.onclick = function() {
+            createTr();
+        }
+
+        addLists.onclick = function() {
+            for(var i = 0; i < 5; i ++){
+                createTr();
+            }
+        }
+
+        function createTr() {
             var tr = document.createElement("tr");
-            var td = document.createElement("td");
-            var input = document.createElement("input");
-
-            todoList.append(content);
-
-            console.log(todoList);
-            console.log(content);
-            
-
+            tr.innerHTML = '<td><input type="text" size="3"></td>' +
+                '<td><input type="text"></td>' +
+                '<td><input type="text" size="5"></td>' +
+                '<td><input type="text"></td>';
+            todoList.appendChild(tr);
         }
     </script>
 
