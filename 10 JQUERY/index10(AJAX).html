@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    
+    <button type="button" id="getAjax">get방식 요청</button>
+    <button type="button" id="postAjax">post방식 요청</button>
+
+
+    <script>
+
+        $("#getAjax").click(function() {
+            $.ajax({
+                type : "get", //요청 타입(method)
+                url : "http://localhost:8787/api/v1/getData?num=116&name=비챤",
+                success : function(data) { //요청 성공시 실행할 콜백
+                    console.log(data);
+                },
+                error : function(err, status) { //에러시에 결과를 받을 콜백
+                    console.log(err, state);
+                }
+            })
+        });
+
+        $("#postAjax").click(function() {
+            $.ajax({
+                type : "post",
+                url : "http://localhost:8787/api/v1/getInfo",
+                data : JSON.stringify({name:"고세구", no:300}), //보낼 데이터를 작성하는 곳(body와 유사)
+                contentType : "application/json", //아무것도 작성하지 않으면 default값 form 타입 입니다.
+                success : function(data) { //요청 성공시 실행할 콜백
+                    console.log(data);
+                },
+                error : function(err, status) { //에러시에 결과를 받을 콜백
+                    console.log(err, state);
+                }
+            })
+        })
+    </script>
+</body>
+</html>
