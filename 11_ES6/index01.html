@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <script>
         //let, const
         //var x = 1;
@@ -16,29 +17,24 @@
 
         //중복선언 x, 중괄호 스코프
         let a = 1;
-
+        //let a = 2; // 중복 선언 불가능!
         if(true) {
             let a = 100;
         }
-        console.log(a);
+        console.log(a); //결과: 1
 
         //상수 - 값의 변경이 금지
         const GENDER = "남자";
         GDENDER = "여자";
-        console.log(GENDER); // 남자 출력됨
+        console.log(GENDER); // 결과: 남자
 
         //배열이나 객체에서는 내부값을 변경할 수 있음
         const obj = {name: "홍길동"};
         //obj = {age: 10}; // 불가능
 
-        obj.name = "이순신";
-        console.log(obj);
-
-
+        obj.name = "이순신"; //const객체이지만 내부의 값은 변경할 수 있음
+        console.log(obj); //결과: 이순신
     </script>
-
-    
-
     
 </body>
 </html>
