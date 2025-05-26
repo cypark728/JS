@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let, const
+        //var x = 1;
+        //if(true) {
+        //    var x = 100;
+        //}
+        //console.log(x);
+
+        //중복선언 x, 중괄호 스코프
+        let a = 1;
+
+        if(true) {
+            let a = 100;
+        }
+        console.log(a);
+
+        //상수 - 값의 변경이 금지
+        const GENDER = "남자";
+        GDENDER = "여자";
+        console.log(GENDER); // 남자 출력됨
+
+        //배열이나 객체에서는 내부값을 변경할 수 있음
+        const obj = {name: "홍길동"};
+        //obj = {age: 10}; // 불가능
+
+        obj.name = "이순신";
+        console.log(obj);
+
+
+    </script>
+
+    
+
+    
+</body>
+</html>
